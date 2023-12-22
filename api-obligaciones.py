@@ -3,7 +3,7 @@ from flask import Flask, Response
 import pandas as pd
 
 # Carga los DataFrames desde los archivos pickle generados en ETL
-df_olbigaciones = pd.read_pickle('df_obl_tas.pkl')
+df_obligaciones = pd.read_pickle('df_obl_tas.pkl')
 df_cliente_total = pd.read_pickle('df_total_cliente.pkl')
 
 #se crea instancia de flask
