@@ -17,12 +17,12 @@ def inicio():
 # ruta para obtener información del DataFrame con las obligaciones de los clientes
 @app.route('/api/obligaciones', methods=['GET'])
 def get_olbigaciones():
-    return Response(df_olbigaciones.to_string(index=False,sep=';'),content_type='text/plain')
+    return Response(df_obligaciones.to_csv(index=False,sep=';'),content_type='text/plain')
 
 # ruta para obtener información del DataFrame de los clientes con el valor total de sus obligaciones
 @app.route('/api/clientes', methods=['GET'])
 def get_clientes():
-    return Response(df_cliente_total.to_string(index=False,sep=';'),content_type='text/plain')
+    return Response(df_cliente_total.to_csv(index=False,sep=';'),content_type='text/plain')
 
 if __name__ == '__main__':
     app.run(debug=True)
