@@ -12,10 +12,10 @@ app = Flask(__name__)
 # Ruta por defecto
 @app.route('/', methods=['GET'])
 def inicio():
-    return 'api para consultar obligaciones y clientes \n Obligaciones: /api/olbigaciones \n Clientes: /api/clientes'
+    return 'api para consultar Obligaciones: /api/olbigaciones y Clientes: /api/clientes'
 
 # ruta para obtener información del DataFrame con las obligaciones de los clientes
-@app.route('/api/olbigaciones', methods=['GET'])
+@app.route('/api/obligaciones', methods=['GET'])
 def get_olbigaciones():
     return jsonify(df_olbigaciones.to_dict(orient='records'))
 
